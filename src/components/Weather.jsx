@@ -35,7 +35,7 @@ const Weather = () => {
         />
         <h2 className='country'>{countrySelect.country}</h2>
         <h2 className='state'>{stateSelect.state}</h2>
-        <h2 className='city'>{citySelect}</h2>
+        <h2 className='city'>{citySelect.city}</h2>
 
         <span className='flag'>{countrySelect.flag}</span>
       </section>

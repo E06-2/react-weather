@@ -75,10 +75,24 @@ const DropDowns = () => {
         <div className='custom-select'>
           <select
             defaultValue={citySelect}
-            onChange={(e) => setCitySelect(e.target.value)}>
+            onChange={(e) =>
+              setCitySelect({
+                city: e.target.value,
+                lat: e.target.childNodes[e.target.selectedIndex].getAttribute(
+                  'lat'
+                ),
+                lon: e.target.childNodes[e.target.selectedIndex].getAttribute(
+                  'lon'
+                ),
+              })
+            }>
             <option value='default'>Please select a city</option>
             {cities.map((city, index) => (
-              <option key={index} value={city.name}>
+              <option
+                key={index}
+                lat={city.latitude}
+                lon={city.longitude}
+                value={city.name}>
                 {city.name}
               </option>
             ))}
